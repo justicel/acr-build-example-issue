@@ -13,4 +13,6 @@ steps:
   - id: buildx-builder-list-post
     cmd: buildx ls
   - id: buildx
-    cmd: buildx build --platform linux/amd64 --platform linux/arm64/v8 -t $Registry/bookworm-build-test-buildx .
+    cmd: buildx build --platform linux/amd64 $Registry/bookworm-build-test-buildx .
+#  - id: buildx
+#    cmd: buildx build --platform linux/amd64 --platform linux/arm64/v8 -t $Registry/bookworm-build-test-buildx .
