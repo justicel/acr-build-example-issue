@@ -1,8 +1,8 @@
 version: v1.1.0
 steps:
   - id: downloadrootfs
-    cmd: bash:5.2 -c 'wget -O rootfs.tar.xz "https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-amd64/bookworm/rootfs.tar.xz"'
-  - id: build
-    build: -t $Registry/bookworm-build-test -f Dockerfile .
+    cmd: bash wget -O rootfs-amd64.tar.xz "https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-amd64/bookworm/rootfs.tar.xz"
+  - id: downloadrootfs-arm
+    cmd: bash wget -O rootfs-arm64.tar.xz "https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-arm64v8/bookworm/rootfs.tar.xz"
   - id: buildx
-    cmd: buildx build --platform linux/amd64 -t $Registry/bookworm-build-test-buildx .
+    cmd: buildx build --platform linux/amd64 --platform linux/arm64/v8 -t $Registry/bookworm-build-test-buildx .
