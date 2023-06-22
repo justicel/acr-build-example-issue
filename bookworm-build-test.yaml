@@ -2,10 +2,10 @@ version: v1.1.0
 steps:
   - id: buildx-builder-workaround-list-pre
     cmd: buildx ls
-  - id: buildx-builder-workaround
-    cmd: buildx create --name next --use
-  - id: buildx-builder-workaround-list-post
-    cmd: buildx ls
+#  - id: buildx-builder-workaround
+#    cmd: buildx create --name next --use
+#  - id: buildx-builder-workaround-list-post
+#    cmd: buildx ls
   - id: downloadrootfs
     cmd: busybox wget -O rootfs-amd64.tar.xz "https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-amd64/bookworm/rootfs.tar.xz"
   - id: downloadrootfs-arm
