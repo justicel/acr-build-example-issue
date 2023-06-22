@@ -1,0 +1,4 @@
+version: v1.1.0
+steps:
+  - id: build
+    build: -t $Registry/bookworm-build-test -f Dockerfile .
