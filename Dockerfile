@@ -1,3 +1,10 @@
-FROM debian:bookworm
+FROM scratch
 
-RUN apt-get update && apt-get -y dist-upgrade && apt-get clean all
+ADD rootfs.tar.xz
+
+RUN apt-get update \
+  && apt-get -y dist-upgrade \
+  && apt-get clean all \
+  && uname -a
+
+CMD ["sh"]
