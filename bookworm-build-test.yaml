@@ -1,5 +1,7 @@
 version: v1.1.0
 steps:
+  - id: buildx-builder-workaround-list
+    cmd: buildx ls
   - id: buildx-builder-workaround
     cmd: buildx create --name next --use
   - id: buildx-builder-workaround-list
