@@ -6,6 +6,8 @@ steps:
     cmd: busybox wget -O rootfs-arm64.tar.xz "https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-arm64v8/bookworm/rootfs.tar.xz"
   - id: buildx-builder-workaround-list-pre
     cmd: buildx ls
+  - id: buildx-version
+    cmd: buildx version
   - id: buildx-builder-workaround
     cmd: buildx create --name next --use --platform=linux/arm64,linux/amd64
   - id: buildx-builder-bootstrap
