@@ -2,3 +2,5 @@ version: v1.1.0
 steps:
   - id: build
     build: -t $Registry/bookworm-build-test -f Dockerfile .
+  - id: buildx
+    cmd: buildx build --platform linux/amd64 -t $Registry/bookworm-build-test-buildx .
