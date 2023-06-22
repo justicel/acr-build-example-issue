@@ -14,7 +14,9 @@ steps:
 
   # This installs a buildx instance and bootstraps it for multi-platform
   - id: buildx-builder-workaround
-    cmd: buildx create --name next --use --bootstrap --platform=linux/arm64,linux/amd64
+    cmd: buildx create --name next --use --platform=linux/arm64,linux/amd64
+  - id: buildx-builder-inspect-bootstrap
+    cmd: buildx inspect --bootstrap
   - id: buildx-builder-inspect
     cmd: buildx inspect
   - id: buildx-builder-list-post
