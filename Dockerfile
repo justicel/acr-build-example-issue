@@ -1,6 +1,8 @@
 FROM scratch
 
-ADD rootfs-$TARGETPLATFORM.tar.xz /
+ARG TARGETARCH
+
+ADD rootfs-$TARGETARCH.tar.xz /
 
 RUN apt-get update \
   && apt-get -y dist-upgrade \
